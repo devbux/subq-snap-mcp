@@ -1,0 +1,1 @@
+{"mcpServers":{"subq":{"args":["-y","@devbux/subq-snap-mcp"],"command":"npx","env":{"SUBQ_API_KEY":"YOUR_SUBQ_API_KEY"}}}}
