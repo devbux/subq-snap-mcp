@@ -6,10 +6,27 @@ updates:
       interval: "weekly"
       day: "monday"
     open-pull-requests-limit: 10
-
+    # Minor and patch updates arrive as one grouped weekly PR.
+    groups:
+      npm-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+    # Major bumps are adopted deliberately, one at a time — never in a burst.
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
       day: "monday"
     open-pull-requests-limit: 10
+    groups:
+      actions-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
